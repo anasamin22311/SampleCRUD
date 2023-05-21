@@ -1,0 +1,14 @@
+﻿@model SampleCRUD.Models.InvoiceItem
+
+<h2>Invoice Item Details</h2>
+
+<div>
+    <h4>Description: @Html.DisplayFor(model => model.Description)</h4>
+    <p>Quantity: @Html.DisplayFor(model => model.Quantity)</p>
+    <p>Unit Price: @Html.DisplayFor(model => model.UnitPrice)</p>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

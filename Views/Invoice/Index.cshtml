@@ -1,0 +1,39 @@
+﻿@model List<SampleCRUD.Models.Invoice>
+
+<h2>Invoices</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                Invoice Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoice in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => invoice.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => invoice.InvoiceDate)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@invoice.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@invoice.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@invoice.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

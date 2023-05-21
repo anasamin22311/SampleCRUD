@@ -1,0 +1,24 @@
+﻿@model SampleCRUD.Models.Invoice
+
+<h2>Create Invoice</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="CustomerName">Customer Name:</label>
+        <input asp-for="CustomerName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="InvoiceDate">Invoice Date:</label>
+        <input asp-for="InvoiceDate" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+
+        <label asp-for="Id" class="control-label"></label>
+        <input asp-for="Id" class="form-control" />
+        <span asp-validation-for="Id" class="text-danger"></span>
+        <option value="">-- Select Invoice Item --</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
